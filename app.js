@@ -511,7 +511,6 @@ app.post("/resend",async(req,res)=>{
     })
   }
 
-  // genrate a token
   const verificationToken = jwtSign(email);
   console.log(verificationToken);
   try {
@@ -544,27 +543,4 @@ app.listen(PORT, () => {
   console.log(`Listenning on port ${PORT}`);
 });
 
-//Create an ejs Template for register and loggin
-//hashed Password
-//Create a mongoDB connection
-//User Schema
 
-//lecture 7
-//checkuser before insertion /register
-
-//'/login'
-//validate the data
-//find user using either mail or username
-//for found user matched the password
-//include session info to check futher
-//adding session and on database
-
-//dashboard template
-//'logout' and 'logout from all devices
-//isAuth
-
-//create item, edit item, delete item
-//axios package
-//browser
-//pagination
-//rate limiting
