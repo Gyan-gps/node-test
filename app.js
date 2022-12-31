@@ -25,8 +25,9 @@ app.set("view engine", "ejs");
 
 //connection with
 mongoose.set("strictQuery", false);
+const mongoDB_URL="mongodb+srv://acciotest:acciotest@cluster0.eypdnfo.mongodb.net/acciotest"
 mongoose
-  .connect(process.env.mongoDB_URL, {
+  .connect(mongoDB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -45,7 +46,7 @@ app.use(express.static("public"));
 //Adding the session
 
 const store = new mongoDBSession({
-  uri: process.env.mongoDB_URL,
+  uri: mongoDB_URL,
   collection: "sessions",
 });
 
