@@ -59,6 +59,11 @@ app.use(
   })
 );
 
+
+
+
+
+
 //routes
 app.get("/", (req, res) => {
   res.send("Welcome to my app");
@@ -255,6 +260,7 @@ app.get("/home", isAuth, (req, res) => {
 });
 
 app.post("/logout", isAuth, (req, res) => {
+  console.log(req.session);
   req.session.destroy((err) => {
     if (err) throw err;
 
@@ -325,6 +331,7 @@ app.post("/pagination_dashboard", isAuth, async (req, res) => {
 
 app.post("/create-item", isAuth, rateLimitng, async (req, res) => {
   console.log(req.body);
+  console.log(req.session);
   const todoText = req.body.todo;
 
   if (!todoText) {
